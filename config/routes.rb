@@ -1,6 +1,8 @@
 Eduapp::Application.routes.draw do
   root to: 'students#index'
-  resources :students
+  resources :students do
+    resources :progresses, only: [:index, :create]
+  end
 
 
   # The priority is based upon order of creation:

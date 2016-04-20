@@ -1,0 +1,16 @@
+<h1>Detailed progress report of <%= link_to "#{@student.first_name} #{@student.last_name}", student_path(@student) %> </h1>
+<br>
+<p>
+  <table>
+    <tr>
+      <th>Lesson</th><th>Part</th><th>completed at</th>
+    </tr>
+    <% @progresses.each_with_index do |progress, index| %>
+      <tr <%= "style=background-color:#bbb" if index == 0  %>>
+        <td><%= progress.lesson %></td>
+        <td><%= progress.part %></td>
+        <td><%= progress.updated_at.to_s(:db) %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
