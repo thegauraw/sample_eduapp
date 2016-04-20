@@ -31,6 +31,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'test-unit', '~> 3.0'
+  gem 'rubocop'
 end
 
 # To use ActiveModel has_secure_password
