@@ -9,7 +9,7 @@
       <tr <%= "style=background-color:#bbb" if index == 0  %>>
         <td><%= progress.lesson %></td>
         <td><%= progress.part %></td>
-        <td><%= progress.updated_at.to_s(:db) %></td>
+        <td><%= progress.updated_at.to_s(:formatted_datetime) %></td>
       </tr>
     <% end %>
   </table>
