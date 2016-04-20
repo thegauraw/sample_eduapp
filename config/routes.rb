@@ -1,4 +1,8 @@
 Eduapp::Application.routes.draw do
+  resources :teachers do
+    get 'reports', :on => :member
+  end
+
   root to: 'students#index'
   resources :students do
     resources :progresses, only: [:index, :create]
