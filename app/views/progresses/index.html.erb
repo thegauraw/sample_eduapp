@@ -1,9 +1,9 @@
-<h1>Detailed progress report of <%= link_to "#{@student.first_name} #{@student.last_name}", student_path(@student) %> </h1>
+<h1>Detailed progress report: '<%= link_to "#{@student.full_name}", student_path(@student) %>' </h1>
 <br>
 <p>
   <table>
     <tr>
-      <td colspan="3"><b>Add Progress:</b></td>
+      <td colspan="3"><b>Add Progress for student: '<%= "#{@student.full_name}" %>'</b></td>
     </tr>
     <%= form_for([@student, @student.progresses.build]) do |f| %>
     <tr>
