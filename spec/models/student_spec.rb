@@ -18,4 +18,16 @@ RSpec.describe Student, :type => :model do
     end
   end
 
+  describe '#progress_status' do
+    before do
+      @progress1 = student.progresses.create(lesson:1, part:1)
+      @progress2 = student.progresses.create(lesson:1, part:2)
+    end
+
+    subject {student.progress_status }
+    it "returns max progress made by the student" do
+      expect(subject).to eql(@progress2)
+    end
+  end
+
 end

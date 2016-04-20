@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<% @students.each do |student| %>
+  <p>
+    <b><%= "#{student.full_name}" %></b>
+    <%= "#{student.show_progress}" %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>
