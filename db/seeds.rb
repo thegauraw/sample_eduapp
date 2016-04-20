@@ -2,10 +2,16 @@
 
 Student.delete_all
 
-Student.create(first_name: 'Foo',
+student1 = Student.create(first_name: 'Foo',
   last_name: 'Bar'
   )
 
-Student.create(first_name: 'Baz',
+student2 = Student.create(first_name: 'Baz',
   last_name: 'Qux'
   )
+
+student1.progresses.create(lesson: 1, part:1)
+student1.progresses.create(lesson: 1, part:2)
+
+student1.progresses.create(lesson: 1, part:1)
+student1.progresses.create(lesson: 1, part:2)
