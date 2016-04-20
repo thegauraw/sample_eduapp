@@ -14,9 +14,10 @@
     <td><%= student.first_name %></td>
     <td><%= student.last_name %></td>
     <td><%= link_to 'Show', student %> |</td>
-    <td> <%= link_to 'Edit', edit_student_path(student) %> |</td>
-    <td> <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
-    <td> <%= link_to "Progress details", student_progresses_path(student) %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %> |</td>
+    <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %> |</td>
+    <td><%= link_to 'Show Progress', student_progresses_path(student) %> |</td>
+    <td><%= link_to raw('<span class="glyphicon glyphicon-download") aria-hidden="true"></span>'), report_student_path(student), title: 'Download Progress' %></td>
   </tr>
 <% end %>
 </table>

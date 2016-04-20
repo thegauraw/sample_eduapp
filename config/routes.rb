@@ -2,6 +2,7 @@ Eduapp::Application.routes.draw do
   root to: 'students#index'
   resources :students do
     resources :progresses, only: [:index, :create]
+    get 'report', :on => :member
   end
 
 

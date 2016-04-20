@@ -80,4 +80,9 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def report
+    @student = Student.find(params[:id])
+    render :json => @student, :include => {:progresses => {:only => [:lesson, :part]}}, :except => [:created_at, :updated_at]
+  end
 end
