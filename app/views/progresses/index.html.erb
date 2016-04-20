@@ -3,6 +3,30 @@
 <p>
   <table>
     <tr>
+      <td colspan="3"><b>Add Progress:</b></td>
+    </tr>
+    <%= form_for([@student, @student.progresses.build]) do |f| %>
+    <tr>
+      <td>
+        <%= f.label :lesson %><br>
+        <%= f.text_field :lesson %>
+      </td>
+      <td>
+        <%= f.label :part %><br>
+        <%= f.text_field :part %>
+      </td>
+      <td>
+        <%= f.submit %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</p>
+
+<br>
+<p>
+  <table>
+    <tr>
       <th>Lesson</th><th>Part</th><th>completed at</th>
     </tr>
     <% @progresses.each_with_index do |progress, index| %>
