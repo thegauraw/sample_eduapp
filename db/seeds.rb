@@ -9,13 +9,9 @@ if Rails.env.development?
   end
   # Student.delete_all
 
-  student1 = Student.create(first_name: 'Foo',
-    last_name: 'Bar'
-    )
-
-  student2 = Student.create(first_name: 'Baz',
-    last_name: 'Qux'
-    )
+  student1 = Student.create(first_name: 'Foo', last_name: 'Bar')
+  student2 = Student.create(first_name: 'Baz', last_name: 'Qux')
+  student3 = Student.create(first_name: 'Garply', last_name: 'Waldo')
 
   student1.progresses.create(lesson: 1, part:1)
   sleep(1)
@@ -25,4 +21,10 @@ if Rails.env.development?
   student2.progresses.create(lesson: 1, part:1)
   sleep(1)
   student2.progresses.create(lesson: 1, part:2)
+
+  teacher1 = Teacher.create(first_name: 'Norf', last_name: 'Quux')
+  teacher2 = Teacher.create(first_name: 'Corge', last_name: 'Grault')
+
+  teacher1.students = [student1, student2]
+  teacher2.students = [student2, student3]
 end
