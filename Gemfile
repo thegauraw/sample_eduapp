@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.1.1.0'
 
 group :test, :development do
+  gem 'sextant'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
