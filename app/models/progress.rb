@@ -7,9 +7,15 @@ class Progress < ActiveRecord::Base
 
   validates :lesson, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: MAX_LESSON}
   validates :part, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: MAX_PART}
+  validates :student, presence: true
+  validates_with SequentialCompletionValidator
 
   def progress_to_int
-    (lesson-1)*Progress::MAX_PART + part
+    (lesson.to_i-1)*Progress::MAX_PART + part.to_i
+  end
+
+  def get_latest
+    student.try(:progress_status)
   end
 
 end
