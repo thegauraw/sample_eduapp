@@ -1,15 +1,15 @@
-class Student < ActiveRecord::Base
-  attr_accessible :first_name, :last_name
+class Student < User
+  # attr_accessible :first_name, :last_name
   has_many :progresses, dependent: :destroy
   has_many :courses
-  has_many :teachers, through: :courses
+  has_many :teachers, through: :courses, class_name: "User"
 
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+  # def full_name
+  #   "#{first_name} #{last_name}"
+  # end
 
   def progress_status
     # return max progress made by the student
